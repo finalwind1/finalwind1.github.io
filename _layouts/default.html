@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      
-  {% include head.html %}
 
-  {% if site.google-analytics %}
-  {% include google-analytics.html %}
-  {% endif %}
+    {% include head.html %}
 
-  {% if page.url == "/404.html" %}
-  <meta http-equiv="refresh" content="10; url={{ site.baseurl }}">
-  {% endif %}
+    <body>
 
-  </head>
+        {% include header.html %}
 
-  <body>
+        <div class="page-content animated fadeIn">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </div>
 
-  {% include header.html %}
+        <a href="Mailto:az8321550@gmail.com?CC=az8321550@gmail.com&BCC=az8321550@gmail.com&Subject=Remind&Body=This email is from your blog. Someone want to contact to you!" class="float-btn" id="connect-to-me-btn">
+            <i class="fa fa-envelope email-icon"></i>
+            <span class="email-text">Email to me!</span>
+        </a>
 
-  <div class="wrapper">
-        {{ content }}
-  </div>
+        {% include footer.html %}
 
-</body>
-
-<foot>
-
-    {% include footer.html %}
-    {% include foot.html %}
-
-</foot>
+        <script src="{{ '/scripts/app.js' | prepend: site.baseurl }}"></script>
+    </body>
 
 </html>
